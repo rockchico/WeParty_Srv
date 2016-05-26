@@ -11,7 +11,37 @@ class UsersController extends AppController {
         $this->loadComponent('Flash'); // Include the FlashComponent
     }
 
+    public function login() {
 
+        $jsonPost = null;
+        $jsonResponse = (object) array();
+
+        if ($this->request->is('post')) {
+
+            $jsonPost = $this->request->input('json_decode');
+            //$this->log($jsonPost, "debug");
+
+            if($jsonPost) {
+
+                $email = $jsonPost->userEmail;
+                $password = md5($jsonPost->userPassword);
+                $user = $this->Users->find()->where(['email' => $email, 'password' => md5($password)])->limit(1);
+                $result = $user->toArray();
+
+
+
+                if ($result) {
+                    $this->log($result[0]->name, "debug");
+                    $jsonResponse->success = "yes";
+                } else {
+                    $jsonResponse->success = "no";
+                }
+
+            }
+
+        }
+        $this->set('jsonResponse', $jsonResponse);
+    }
 
     public function registration() {
 
@@ -42,7 +72,6 @@ class UsersController extends AppController {
         }
         $this->set('jsonResponse', $jsonResponse);
     }
-
 
 
 
