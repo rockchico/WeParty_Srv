@@ -60,16 +60,38 @@ class UsersController extends AppController {
             $this->log($jsonPost, "debug");
 
             if($jsonPost) {
-                $user->name = $jsonPost->userName;
-                $user->email = $jsonPost->userEmail;
-                $user->password = md5($jsonPost->userPassword);
 
-                if ($result = $this->Users->save($user)) {
-                    $jsonResponse->success = "yes";
-                    $jsonResponse->lastInsertId = $result->id;
-                } else {
+                // verifica se o email informado ja existe no cadastro
+                $email = $jsonPost->userEmail;
+                $user1 = $this->Users->find()->where(['email' => $email])->limit(1);
+                $this->log($user1, "debug");
+                $result = $user1->toArray();
+
+                //$result = array();
+
+                // se obteve resultado significa que o email ja foi cadastrado por outro usuário
+                if($result) {
                     $jsonResponse->success = "no";
+                    $jsonResponse->info = "Email ja existe no cadastro, informe outro.";
+                } else { // caso contrario esta livre pra cadastro
+
+
+                    $user->name = $jsonPost->userName;
+                    $user->email = $jsonPost->userEmail;
+                    $user->password = md5($jsonPost->userPassword);
+
+                    if ($result = $this->Users->save($user)) {
+                        $jsonResponse->success = "yes";
+                        $jsonResponse->lastInsertId = $result->id;
+                    } else {
+                        $jsonResponse->success = "no";
+                        $jsonResponse->info = "Não foi possivel registrar usuario no cadastro.";
+                    }
                 }
+
+
+
+
 
             }
 

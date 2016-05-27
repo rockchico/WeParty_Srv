@@ -1,1 +1,33 @@
-2016-05-27 19:53:05 Debug: José da Silva
+2016-05-27 22:25:09 Debug: stdClass Object
+(
+    [userPassword] => tesye
+    [userName] => Francisco Schwertner
+    [userEmail] => francisco schwertner
+)
+
+2016-05-27 22:25:09 Debug: SELECT Users.id AS `Users__id`, Users.name AS `Users__name`, Users.email AS `Users__email`, Users.password AS `Users__password` FROM users Users WHERE email = :c0 LIMIT 1
+2016-05-27 22:26:40 Debug: stdClass Object
+(
+    [userPassword] => teste123
+    [userName] => Francisco Schwertner
+    [userEmail] => rockchico@gmail.com
+)
+
+2016-05-27 22:26:40 Debug: SELECT Users.id AS `Users__id`, Users.name AS `Users__name`, Users.email AS `Users__email`, Users.password AS `Users__password` FROM users Users WHERE email = :c0 LIMIT 1
+2016-05-27 22:27:09 Debug: stdClass Object
+(
+    [userPassword] => ee
+    [userName] => Francisco
+    [userEmail] => rockchico@gmail.com
+)
+
+2016-05-27 22:27:09 Debug: SELECT Users.id AS `Users__id`, Users.name AS `Users__name`, Users.email AS `Users__email`, Users.password AS `Users__password` FROM users Users WHERE email = :c0 LIMIT 1
+2016-05-27 22:27:20 Debug: stdClass Object
+(
+    [userPassword] => ee
+    [userName] => Francisco
+    [userEmail] => rockchico2@gmail.com
+)
+
+2016-05-27 22:27:20 Debug: SELECT Users.id AS `Users__id`, Users.name AS `Users__name`, Users.email AS `Users__email`, Users.password AS `Users__password` FROM users Users WHERE email = :c0 LIMIT 1
+2016-05-27 22:31:29 Debug: Francisco Schwertner
