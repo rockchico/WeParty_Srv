@@ -33,6 +33,10 @@ class UsersController extends AppController {
                 if ($result) {
                     $this->log($result[0]->name, "debug");
                     $jsonResponse->success = "yes";
+                    $jsonResponse->userId = $result[0]->id;
+                    $jsonResponse->userName = $result[0]->name;
+                    $jsonResponse->userEmail = $result[0]->email;
+
                 } else {
                     $jsonResponse->success = "no";
                 }
