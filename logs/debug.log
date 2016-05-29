@@ -1,33 +1,29 @@
-2016-05-27 22:25:09 Debug: stdClass Object
+2016-05-29 21:33:17 Debug: stdClass Object
 (
-    [userPassword] => tesye
-    [userName] => Francisco Schwertner
-    [userEmail] => francisco schwertner
+    [partySongs] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [songPath] => /storage/sdcard1/Musicas/the asteroids galaxy tour/The_Asteroids_Galaxy_Tour-Fruit-(Advance)-2009-DV8/07-the_asteroids_galaxy_tour-around_the_bend.mp3
+                    [songUuid] => 7472b2d0-a885-4b7e-af63-c16c793c6e25
+                    [songName] => 07-the_asteroids_galaxy_tour-around_the_bend
+                )
+
+            [1] => stdClass Object
+                (
+                    [songPath] => /storage/sdcard1/Musicas/the asteroids galaxy tour/The_Asteroids_Galaxy_Tour-Fruit-(Advance)-2009-DV8/07-the_asteroids_galaxy_tour-around_the_bend.mp3
+                    [songUuid] => 7472b2d0-a885-4b7e-af63-c16c793c6e25
+                    [songName] => 07-the_asteroids_galaxy_tour-around_the_bend
+                )
+
+            [2] => stdClass Object
+                (
+                    [songPath] => /storage/sdcard1/Musicas/the asteroids galaxy tour/The_Asteroids_Galaxy_Tour-Fruit-(Advance)-2009-DV8/07-the_asteroids_galaxy_tour-around_the_bend.mp3
+                    [songUuid] => 7472b2d0-a885-4b7e-af63-c16c793c6e25
+                    [songName] => 07-the_asteroids_galaxy_tour-around_the_bend
+                )
+
+        )
+
 )
 
-2016-05-27 22:25:09 Debug: SELECT Users.id AS `Users__id`, Users.name AS `Users__name`, Users.email AS `Users__email`, Users.password AS `Users__password` FROM users Users WHERE email = :c0 LIMIT 1
-2016-05-27 22:26:40 Debug: stdClass Object
-(
-    [userPassword] => teste123
-    [userName] => Francisco Schwertner
-    [userEmail] => rockchico@gmail.com
-)
-
-2016-05-27 22:26:40 Debug: SELECT Users.id AS `Users__id`, Users.name AS `Users__name`, Users.email AS `Users__email`, Users.password AS `Users__password` FROM users Users WHERE email = :c0 LIMIT 1
-2016-05-27 22:27:09 Debug: stdClass Object
-(
-    [userPassword] => ee
-    [userName] => Francisco
-    [userEmail] => rockchico@gmail.com
-)
-
-2016-05-27 22:27:09 Debug: SELECT Users.id AS `Users__id`, Users.name AS `Users__name`, Users.email AS `Users__email`, Users.password AS `Users__password` FROM users Users WHERE email = :c0 LIMIT 1
-2016-05-27 22:27:20 Debug: stdClass Object
-(
-    [userPassword] => ee
-    [userName] => Francisco
-    [userEmail] => rockchico2@gmail.com
-)
-
-2016-05-27 22:27:20 Debug: SELECT Users.id AS `Users__id`, Users.name AS `Users__name`, Users.email AS `Users__email`, Users.password AS `Users__password` FROM users Users WHERE email = :c0 LIMIT 1
-2016-05-27 22:31:29 Debug: Francisco Schwertner

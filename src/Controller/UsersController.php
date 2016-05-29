@@ -25,10 +25,10 @@ class UsersController extends AppController {
 
                 $email = $jsonPost->userEmail;
                 $password = md5($jsonPost->userPassword);
-                $user = $this->Users->find()->where(['email' => $email, 'password' => md5($password)])->limit(1);
+                $user = $this->Users->find()->where(['email' => $email, 'password' => $password])->limit(1);
                 $result = $user->toArray();
 
-
+                //$this->log($user, "debug");
 
                 if ($result) {
                     $this->log($result[0]->name, "debug");

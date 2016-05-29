@@ -43,7 +43,25 @@ class PartiesController extends AppController {
         $this->set('jsonResponse', $jsonResponse);
     }
 
-    
+    public function savesongs() {
+
+        $jsonPost = null;
+        $jsonResponse = (object) array();
+
+        $party = $this->Parties->newEntity();
+
+        if ($this->request->is('post')) {
+
+            $jsonPost = $this->request->input('json_decode');
+            $this->log($jsonPost, "debug");
+
+            
+
+        }
+        $this->set('jsonResponse', $jsonResponse);
+    }
+
+
 
 
 }
