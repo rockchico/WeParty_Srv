@@ -3,7 +3,7 @@
 
 namespace App\Controller;
 
-class PartiesController extends AppController {
+class SongsController extends AppController {
 
     public function initialize() {
         parent::initialize();
@@ -11,38 +11,51 @@ class PartiesController extends AppController {
         $this->loadComponent('Flash'); // Include the FlashComponent
     }
 
-
-
-    public function create() {
+    public function save() {
 
         $jsonPost = null;
         $jsonResponse = (object) array();
 
-        $party = $this->Parties->newEntity();
+
+
+
+
 
         if ($this->request->is('post')) {
 
             $jsonPost = $this->request->input('json_decode');
             $this->log($jsonPost, "debug");
 
-            if($jsonPost) {
-                $party->name = $jsonPost->partyName;
-                $party->location = $jsonPost->partyLocation;
-                $party->user_id = $jsonPost->partyUserId;
+            $partySongs = $jsonPost->partySongs;
 
-                if ($result = $this->Parties->save($party)) {
+            foreach ($partySongs as $key => $value) {
+
+                $song = $this->Songs->newEntity();
+                # code...
+                $song->name = $value->songName;
+                $song->path = $value->songPath;
+                $song->uuid = $value->songUuid;
+                $song->party_id = $value->songPartyId;
+
+
+                if ($result = $this->Songs->save($song)) {
                     $jsonResponse->success = "yes";
-                    $jsonResponse->lastInsertId = $result->id;
-                } else {
-                    $jsonResponse->success = "no";
+                    $jsonResponse->info = "Músicas Enviadas.";
                 }
+
+
 
             }
 
+
+
+
+
         }
+
+
         $this->set('jsonResponse', $jsonResponse);
     }
-
 
 
 

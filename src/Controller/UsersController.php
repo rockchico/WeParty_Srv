@@ -28,7 +28,7 @@ class UsersController extends AppController {
                 $user = $this->Users->find()->where(['email' => $email, 'password' => $password])->limit(1);
                 $result = $user->toArray();
 
-                //$this->log($user, "debug");
+                //$this->log($result, "debug");
 
                 if ($result) {
                     $this->log($result[0]->name, "debug");

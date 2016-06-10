@@ -228,7 +228,7 @@ return [
             //'port' => 'non_standard_port_number',
             'username' => 'root',
             'password' => 'teste123',
-            'database' => 'cake-test',
+            'database' => 'we_party',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],
