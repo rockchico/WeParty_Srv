@@ -16,11 +16,6 @@ class SongsController extends AppController {
         $jsonPost = null;
         $jsonResponse = (object) array();
 
-
-
-
-
-
         if ($this->request->is('post')) {
 
             $jsonPost = $this->request->input('json_decode');
@@ -50,6 +45,77 @@ class SongsController extends AppController {
 
 
 
+
+        }
+
+
+        $this->set('jsonResponse', $jsonResponse);
+    }
+
+    public function getnext() {
+
+        $jsonPost = null;
+        $jsonResponse = (object) array();
+
+        if ($this->request->is('post')) {
+
+            $jsonPost = $this->request->input('json_decode');
+            //$this->log($jsonPost, "debug");
+
+            $partyId = $jsonPost->partyId;
+
+            $song = $this->Songs->find()->where(['party_id' => $partyId, 'played' => 0])->limit(1)->order(['likes' => 'DESC']);;
+            $result = $song->toArray();
+
+            //$this->log($result, "debug");
+
+            if ($result) {
+                //$this->log($result[0]->name, "debug");
+                $jsonResponse->success = "yes";
+
+                $jsonResponse->songId = $result[0]->id;
+                $jsonResponse->songName = $result[0]->name;
+                $jsonResponse->songUuid = $result[0]->uuid;
+                $jsonResponse->songPath = $result[0]->path;
+                $jsonResponse->songLikes = $result[0]->likes;
+                $jsonResponse->songPlayed = $result[0]->played;
+
+            } else {
+                $jsonResponse->success = "no";
+            }
+
+
+
+
+
+
+
+        }
+
+
+        $this->set('jsonResponse', $jsonResponse);
+    }
+
+    public function setplayed() {
+
+        $jsonPost = null;
+        $jsonResponse = (object) array();
+
+
+
+        if ($this->request->is('post')) {
+
+            $jsonPost = $this->request->input('json_decode');
+            //$this->log($jsonPost, "debug");
+
+            $song = $this->Songs->get($jsonPost->songId);
+            $song->played = 1;
+
+            if ($result = $this->Songs->save($song)) {
+                $jsonResponse->success = "yes";
+            } else {
+                $jsonResponse->success = "no";
+            }
 
         }
 
