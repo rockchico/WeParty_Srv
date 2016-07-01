@@ -67,6 +67,8 @@ class SongsController extends AppController {
             $song = $this->Songs->find()->where(['party_id' => $partyId, 'played' => 0])->limit(1)->order(['likes' => 'DESC']);;
             $result = $song->toArray();
 
+            
+
             //$this->log($result, "debug");
 
             if ($result) {

@@ -64,7 +64,7 @@ class UsersController extends AppController {
                 // verifica se o email informado ja existe no cadastro
                 $email = $jsonPost->userEmail;
                 $user1 = $this->Users->find()->where(['email' => $email])->limit(1);
-                $this->log($user1, "debug");
+                //$this->log($user1, "debug");
                 $result = $user1->toArray();
 
                 //$result = array();
@@ -96,6 +96,8 @@ class UsersController extends AppController {
             }
 
         }
+
+        $this->log($jsonResponse, "debug");
         $this->set('jsonResponse', $jsonResponse);
     }
 

@@ -2689,3 +2689,51 @@ Stack Trace:
 2016-06-17 22:54:41 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
 2016-06-17 22:54:58 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
 2016-06-17 22:54:58 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-06-30 22:27:20 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-06-30 22:27:46 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-06-30 22:27:52 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-06-30 22:28:19 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-06-30 22:28:21 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-06-30 22:28:22 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-06-30 22:32:55 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-06-30 22:32:56 Error: [Cake\Datasource\Exception\InvalidPrimaryKeyException] Record not found in table "songs" with primary key [NULL]
+Request URL: /we_party/songs/setplayed
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /var/www/html/we_party/src/Controller/SongsController.php(113): Cake\ORM\Table->get(NULL)
+#1 [internal function]: App\Controller\SongsController->setplayed()
+#2 /var/www/html/we_party/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#3 /var/www/html/we_party/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#4 /var/www/html/we_party/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\SongsController))
+#5 /var/www/html/we_party/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#6 {main}
+
+
+2016-06-30 22:34:44 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-06-30 22:34:44 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'name' cannot be null
+Request URL: /we_party/parties/create
+Client IP: 127.0.0.1
+Stack Trace:
+#0 /var/www/html/we_party/vendor/cakephp/cakephp/src/Database/Statement/MysqlStatement.php(36): PDOStatement->execute(NULL)
+#1 /var/www/html/we_party/vendor/cakephp/cakephp/src/Database/Connection.php(272): Cake\Database\Statement\MysqlStatement->execute()
+#2 /var/www/html/we_party/vendor/cakephp/cakephp/src/Database/Query.php(188): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#3 /var/www/html/we_party/vendor/cakephp/cakephp/src/ORM/Table.php(1544): Cake\Database\Query->execute()
+#4 /var/www/html/we_party/vendor/cakephp/cakephp/src/ORM/Table.php(1460): Cake\ORM\Table->_insert(Object(Cake\ORM\Entity), Array)
+#5 /var/www/html/we_party/vendor/cakephp/cakephp/src/ORM/Table.php(1391): Cake\ORM\Table->_processSave(Object(Cake\ORM\Entity), Object(ArrayObject))
+#6 /var/www/html/we_party/vendor/cakephp/cakephp/src/Database/Connection.php(559): Cake\ORM\Table->Cake\ORM\{closure}(Object(Cake\Database\Connection))
+#7 /var/www/html/we_party/vendor/cakephp/cakephp/src/ORM/Table.php(1392): Cake\Database\Connection->transactional(Object(Closure))
+#8 /var/www/html/we_party/src/Controller/PartiesController.php(33): Cake\ORM\Table->save(Object(Cake\ORM\Entity))
+#9 [internal function]: App\Controller\PartiesController->create()
+#10 /var/www/html/we_party/vendor/cakephp/cakephp/src/Controller/Controller.php(429): call_user_func_array(Array, Array)
+#11 /var/www/html/we_party/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(114): Cake\Controller\Controller->invokeAction()
+#12 /var/www/html/we_party/vendor/cakephp/cakephp/src/Routing/Dispatcher.php(87): Cake\Routing\Dispatcher->_invoke(Object(App\Controller\PartiesController))
+#13 /var/www/html/we_party/webroot/index.php(37): Cake\Routing\Dispatcher->dispatch(Object(Cake\Network\Request), Object(Cake\Network\Response))
+#14 {main}
+
+
+2016-06-30 22:36:31 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-06-30 23:06:52 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-06-30 23:10:22 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-06-30 23:10:53 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-06-30 23:47:48 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
+2016-06-30 23:55:41 Warning: DebugKit not enabled. You need to either install pdo_sqlite, or define the "debug_kit" connection name.
